@@ -1,0 +1,11 @@
+{
+  "type": "ROZKAZ_KUCHENNY",
+  "payload": {
+    "przepis": "Zupa krem z pomidorów",
+    "czas": "15 min",
+    "temp": "100°C"
+  },
+  "source": "RouterAgent",
+  "timestamp": "2026-08-08T15:25:01.715657",
+  "correlation_id": "trace_603b4d87"
+}

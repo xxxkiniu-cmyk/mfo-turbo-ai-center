@@ -1,0 +1,50 @@
+[
+  {
+    "role": "user",
+    "content": "powiedz TURBINA GADA",
+    "time": 1786141209.7546535,
+    "agent": "AI_AGENT"
+  },
+  {
+    "role": "model",
+    "content": "AI_AGENT ogarnal: powiedz TURBINA GADA [OFFLINE - brak API / limit 429]",
+    "time": 1786141209.7554016,
+    "agent": "AI_AGENT"
+  },
+  {
+    "role": "user",
+    "content": "powiedz TURBINA GADA i opisz co robisz",
+    "time": 1786141618.256277,
+    "agent": "AI_AGENT"
+  },
+  {
+    "role": "model",
+    "content": "[BLAD GEMINI] HTTP 400: {\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"API key not valid. Please pass a valid API key.\",\n    \"status\": \"INVALID_ARGUMENT\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.ErrorInfo\",\n        \"reason\": \"API_KEY_INVALID\",\n        \"domain\": \"googleapis.com\",\n        \"metadata\": {\n          \"service\": \"generativelanguage.googleapis.com\"\n        }\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.LocalizedMessage\",\n        \"locale\": \"en-US\",\n        ",
+    "time": 1786141618.6168451,
+    "agent": "AI_AGENT"
+  },
+  {
+    "role": "user",
+    "content": "powiedz TURBINA GADA i opisz co robisz",
+    "time": 1786141809.5246644,
+    "agent": "AI_AGENT"
+  },
+  {
+    "role": "model",
+    "content": "[BLAD GEMINI] HTTP 400: {\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"API key not valid. Please pass a valid API key.\",\n    \"status\": \"INVALID_ARGUMENT\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.ErrorInfo\",\n        \"reason\": \"API_KEY_INVALID\",\n        \"domain\": \"googleapis.com\",\n        \"metadata\": {\n          \"service\": \"generativelanguage.googleapis.com\"\n        }\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.LocalizedMessage\",\n        \"locale\": \"en-US\",\n        ",
+    "time": 1786141809.8025603,
+    "agent": "AI_AGENT"
+  },
+  {
+    "role": "user",
+    "content": "Siema, czy turbina lokalna gada?",
+    "time": 1786199718.6853485,
+    "agent": "AI_AGENT"
+  },
+  {
+    "role": "model",
+    "content": "AI_AGENT ogarnal: Siema, czy turbina lokalna gada? [OFFLINE]",
+    "time": 1786199718.7266545,
+    "agent": "AI_AGENT"
+  }
+]

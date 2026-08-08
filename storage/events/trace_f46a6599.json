@@ -1,0 +1,9 @@
+{
+  "type": "STRESS",
+  "payload": {
+    "i": 85
+  },
+  "source": "test",
+  "timestamp": "2026-08-08T00:20:21.922841",
+  "correlation_id": "trace_f46a6599"
+}

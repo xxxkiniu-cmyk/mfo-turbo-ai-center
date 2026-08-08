@@ -1,0 +1,7 @@
+{
+  "type": "TEST_DIAG",
+  "payload": {},
+  "source": "diag",
+  "timestamp": "2026-08-08T15:12:41.024671",
+  "correlation_id": "trace_c03ad25b"
+}
