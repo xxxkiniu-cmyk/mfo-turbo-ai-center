@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.zip
+llama.cpp/
+logs/
+*.log
+.cache/
+*.bak*
+*.gguf
+.env

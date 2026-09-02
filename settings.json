@@ -1,0 +1,14 @@
+{
+  "project_name": "MFO TURBO AI CENTER",
+  "version": "2.4",
+  "offline": true,
+  "device": "Redmi Note 14 5G",
+  "models": {
+    "gemini": {
+      "enabled": true,
+      "model": "gemini-2.5-flash",
+      "cost_today": 0.8,
+      "limit": 10
+    }
+  }
+}

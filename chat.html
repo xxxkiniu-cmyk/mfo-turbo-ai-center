@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MFO TURBO AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #064e3b; color: #a3e635; font-family: monospace; }
+        .chat-box { height: 65vh; overflow-y: auto; }
+        .msg-user { text-align: right; color: #d9f99d; margin-bottom: 0.5rem; }
+        .msg-ai { text-align: left; color: #a3e635; margin-bottom: 0.5rem; }
+        input { background-color: #022c22; color: #a3e635; border: 1px solid #166534; outline: none; }
+        button { background-color: #166534; color: #a3e635; }
+    </style>
+</head>
+<body class="p-4">
+    <div class="max-w-3xl mx-auto flex flex-col h-full">
+        <h1 class="text-2xl font-bold mb-4 text-center">MFO TURBO AI - LUNA</h1>
+        <div id="chatBox" class="chat-box border border-green-800 p-4 mb-4 rounded bg-green-950 shadow-inner"></div>
+        <div class="flex gap-2">
+            <input type="text" id="userInput" class="flex-1 p-3 rounded" placeholder="Wpisz wiadomość..." onkeypress="if(event.key === 'Enter') sendMsg()">
+            <button onclick="sendMsg()" class="p-3 rounded font-bold hover:bg-green-700">WYŚLIJ</button>
+        </div>
+    </div>
+    <script>
+        async function sendMsg() {
+            const input = document.getElementById('userInput');
+            const text = input.value.trim();
+            if (!text) return;
+            
+            const chatBox = document.getElementById('chatBox');
+            chatBox.innerHTML += `<div class="msg-user"><strong>TY:</strong> ${text}</div>`;
+            input.value = '';
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            try {
+                const res = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: text })
+                });
+                const data = await res.json();
+                chatBox.innerHTML += `<div class="msg-ai"><strong>LUNA:</strong> ${data.response}</div>`;
+            } catch (e) {
+                chatBox.innerHTML += `<div class="msg-ai text-red-500"><strong>BŁĄD:</strong> ${e.message}</div>`;
+            }
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+    </script>
+</body>
+</html>

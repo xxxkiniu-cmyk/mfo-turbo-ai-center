@@ -1,0 +1,9 @@
+{
+  "type": "TEST",
+  "payload": {
+    "msg": "cleaner"
+  },
+  "source": "main",
+  "timestamp": "2026-08-09T01:40:19.570957",
+  "correlation_id": "trace_da98d153"
+}

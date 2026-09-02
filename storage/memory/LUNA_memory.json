@@ -1,0 +1,14 @@
+[
+  {
+    "role": "user",
+    "content": "Hej Luna, kim jestes? Test silnika v2.8",
+    "time": 1786222454.4662728,
+    "agent": "LUNA"
+  },
+  {
+    "role": "model",
+    "content": "Hej! Jestem Luna, ciepla osobowość i silnik wykonawczy MFO TURBO v2.8. Test silnika? To jest moja pasja!",
+    "time": 1786222543.227753,
+    "agent": "LUNA"
+  }
+]

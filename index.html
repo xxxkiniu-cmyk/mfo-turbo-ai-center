@@ -1,0 +1,21 @@
+<!DOCTYPE html><html lang="pl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MFO Kalkulator</title><script src="https://cdn.tailwindcss.com"></script></head>
+<body class="bg-zinc-950 text-white p-6">
+<div class="max-w-xl mx-auto bg-zinc-900 rounded-2xl p-6">
+<h1 class="text-2xl font-black mb-6">MFO - Kalkulator Kosztów</h1>
+<label class="block mb-2">Malowanie 35zł/m2<input id="m1" type="number" class="w-full bg-black p-3 rounded-xl mt-1" placeholder="m2"></label>
+<label class="block mb-2">Gładzie 40zł/m2<input id="m2" type="number" class="w-full bg-black p-3 rounded-xl mt-1" placeholder="m2"></label>
+<label class="block mb-4">Płytki 120zł/m2<input id="m3" type="number" class="w-full bg-black p-3 rounded-xl mt-1" placeholder="m2"></label>
+<button onclick="oblicz()" class="w-full bg-white text-black font-bold py-4 rounded-xl">Oblicz Koszt</button>
+<div id="wynik" class="mt-6 text-3xl font-black text-cyan-400"></div>
+</div>
+<script>
+function oblicz(){
+ let a=(+document.getElementById('m1').value||0)*35;
+ let b=(+document.getElementById('m2').value||0)*40;
+ let c=(+document.getElementById('m3').value||0)*120;
+ let sum=a+b+c;
+ document.getElementById('wynik').innerHTML=`Malowanie: ${a}zł<br>Gładzie: ${b}zł<br>Płytki: ${c}zł<br><hr class='my-2'>TOTAL: ${sum} zł`;
+}
+</script>
+</body></html>
