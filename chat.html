@@ -41,7 +41,7 @@
                     body: JSON.stringify({ message: text })
                 });
                 const data = await res.json();
-                chatBox.innerHTML += `<div class="msg-ai"><strong>LUNA:</strong> ${data.response}</div>`;
+                chatBox.innerHTML += `<div class="msg-ai"><strong>LUNA:</strong> ${data.reply}</div>`;
             } catch (e) {
                 chatBox.innerHTML += `<div class="msg-ai text-red-500"><strong>BŁĄD:</strong> ${e.message}</div>`;
             }
