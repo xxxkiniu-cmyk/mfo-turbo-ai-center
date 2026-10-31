@@ -1,0 +1,12 @@
+Dowody/
+.obsidian/workspace*.json
+.obsidian/cache/
+.obsidian/plugins/
+.env*
+*.gguf
+*.exe
+*.log
+private/
+backups/
+*.key
+*.pem

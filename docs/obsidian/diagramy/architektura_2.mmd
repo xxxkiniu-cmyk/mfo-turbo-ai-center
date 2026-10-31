@@ -1,0 +1,8 @@
+flowchart TD
+    A[Zadanie Windows po logowaniu] --> S[WSL i systemd]
+    S --> P[PM2 resurrect]
+    P --> WA[WhatsApp Antigravity: proces online]
+    S --> TG[Telegram: usługa aktywna]
+    TG --> L[API modelu 8080]
+    S --> CLI[Antigravity CLI]
+    MIC[Mikrofon START STOP: niezweryfikowany] --- WF[Wispr Flow]

@@ -1,0 +1,11 @@
+flowchart TD
+    W[Windows 11] --> U[WSL Ubuntu i systemd]
+    U --> F[Flask: port 8082]
+    U --> L[llama.cpp: port 8080]
+    WWW[Panel WWW] --> F
+    F --> L
+    L --> Q[Załadowany Qwen 3B]
+    F --> H[Historia JSON i RAG]
+    E[Dysk E: pamięć AI] --- H
+    F --> T[Router zadań]
+    T --> J[JCODE]
