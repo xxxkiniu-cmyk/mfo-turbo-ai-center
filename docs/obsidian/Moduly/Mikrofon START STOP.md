@@ -1,18 +1,17 @@
 ---
 status: "NIEZWERYFIKOWANY"
+data_testu: "2026-10-31"
 tags: [mfo, modul]
 ---
 # Mikrofon START STOP
 
-**Stan: NIEZWERYFIKOWANY**
+**Stan: NIEZWERYFIKOWANY**, zakres: sterowanie i nagrywanie.
 
-Urządzenia audio mają stan OK i Wispr działał podczas audytu. Przycisku START/STOP i nagrania nie testowano.
-
-## Dowód
-Windows AudioEndpoint, Audiosrv, AudioEndpointBuilder; wcześniejszy audyt PIX2.
+## Weryfikacja
+Metoda: PowerShell Get-Service Audiosrv/AudioEndpointBuilder i Get-PnpDevice -Class AudioEndpoint.
+Wynik: obie usługi Running, pięć urządzeń klasy AudioEndpoint ze stanem OK. Nie dowodzi to sprawności mikrofonu wejściowego ani START/STOP. Nie nagrywano i nie przerywano dyktowania.
+Czas pomiarów: 14:45 do 14:46 UTC.
 
 ## Powiązania
 - [[Windows 11]]
 - [[Wispr Flow]]
-
-Status dotyczy zakresu dowodu. Nie jest gwarancją wszystkich funkcji.

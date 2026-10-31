@@ -1,6 +1,6 @@
 # MFO TURBO AI CENTER: skarbiec wizualizacji
 
-30 modułów, źródła dowodów i jawne ograniczenia testów. To dokumentacja, nie instalator usług MFO. Na nowym komputerze statusy są historyczną migawką z 31 października 2026, nie wynikiem testów nowego hosta.
+30 modułów, źródła dowodów i jawne ograniczenia testów. Bieżąca weryfikacja: [[Raport_weryfikacji_20261031]], 17 modułów działa w opisanym zakresie, 2 nie działają, 11 pozostaje niezweryfikowanych. Potwierdzono brak źródła historii/RAG oraz ryzyko odtworzenia Flask. To dokumentacja, nie instalator usług MFO. Na nowym komputerze statusy są historyczną migawką z 31 października 2026, nie wynikiem testów nowego hosta.
 
 ## Otwieranie
 1. Otwórz ten folder jako istniejący skarbiec Obsidiana.

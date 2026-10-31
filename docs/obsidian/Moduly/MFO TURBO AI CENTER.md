@@ -1,15 +1,16 @@
 ---
 status: "DZIAŁA"
+data_testu: "2026-10-31"
 tags: [mfo, modul]
 ---
 # MFO TURBO AI CENTER
 
-**Stan: DZIAŁA**
+**Stan: DZIAŁA**, zakres: projekt, panel i lokalny backend.
 
-Rzeczywisty projekt i działające API. Nie oznacza pełnego testu wszystkich integracji.
-
-## Dowód
-~/mfo/mfo-turbo-ai-center; MASTER_RAPORT.md.
+## Weryfikacja
+Metoda: istniejący katalog projektu, systemctl, GET /api/health i /health.
+Wynik: usługi aktywne, API panelu i modelu HTTP 200. Nie oznacza pełnej sprawności: brak źródła historii/RAG, brak Flask w aktualnym interpreterze oraz nieprzetestowane integracje opisano osobno.
+Czas pomiarów: 14:45 do 14:46 UTC.
 
 ## Powiązania
 - [[Panel MFO]]
@@ -17,5 +18,3 @@ Rzeczywisty projekt i działające API. Nie oznacza pełnego testu wszystkich in
 - [[PM2 WhatsApp]]
 - [[Monitoring]]
 - [[Kopie bezpieczenstwa]]
-
-Status dotyczy zakresu dowodu. Nie jest gwarancją wszystkich funkcji.

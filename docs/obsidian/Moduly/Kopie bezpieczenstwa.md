@@ -1,19 +1,18 @@
 ---
 status: "NIEZWERYFIKOWANY"
+data_testu: "2026-10-31"
 tags: [mfo, modul]
 ---
 # Kopie bezpieczenstwa
 
-**Stan: NIEZWERYFIKOWANY**
+**Stan: NIEZWERYFIKOWANY**, zakres: pełne odtworzenie systemu i danych MFO.
 
-Kopie konfiguracji istnieją, pełnego odtworzenia komputera nie testowano. Kopie zawierające środowiska nie są częścią publikacji.
-
-## Dowód
-Projekt backups/; ~/.local/state/pix2-autostart; kopia przed rozbudową mapy.
+## Weryfikacja
+Metoda: sprawdzenie obecności wcześniejszej prywatnej kopii oraz utworzenie archiwów dokumentacji przed aktualizacją.
+Wynik: kopia istnieje, START i Moduly skarbca oraz docs/obsidian zabezpieczono przed zmianami. Nie przywracano systemu, modeli, baz ani konfiguracji usług. Lokalne kopie i surowe logi nie są publikowane.
+Czas sprawdzenia: 14:45 do 14:47 UTC.
 
 ## Powiązania
 - [[MFO TURBO AI CENTER]]
 - [[Dysk E]]
 - [[Autostart]]
-
-Status dotyczy zakresu dowodu. Nie jest gwarancją wszystkich funkcji.

@@ -1,10 +1,16 @@
 # MFO TURBO AI CENTER
 
-Mapa aktualizowana z obserwacji 31.10.2026. **Nie wszystkie funkcje przetestowano.**
+Weryfikacja: **31.10.2026, 14:45 do 14:46 UTC**. Kopie dokumentacji utworzono do 14:47 UTC.
+**17 DZIAŁA / 2 NIE DZIAŁA / 11 NIEZWERYFIKOWANY.** Status DZIAŁA dotyczy wyłącznie zakresu wskazanego w notatce, nie pełnego testu funkcjonalnego.
+
+## Pilne ustalenia
+- [[Historia JSON]] i [[RAG]]: brak skonfigurowanego katalogu historii, ENOENT. Nie ustalono przyczyny i nie utworzono pustej historii zamiast odzyskania właściwej.
+- [[Flask]]: żywy panel odpowiada, ale aktualny interpreter nie importuje Flask. Nie restartować na podstawie tego audytu.
+- [[Raport_weryfikacji_20261031]]: różnice, dowody i ograniczenia.
 
 ## Mapa
-- [[Architektura]]: diagram Mermaid
-- Widok grafu Obsidiana: Ctrl+G
+- [[Architektura]]: diagramy Mermaid, relacje opisowe. Statusy w notatkach mają pierwszeństwo.
+- Widok grafu: Ctrl+G, filtr `path:Moduly`.
 
 ## Moduły
 - [[Windows 11]]: DZIAŁA
@@ -12,34 +18,32 @@ Mapa aktualizowana z obserwacji 31.10.2026. **Nie wszystkie funkcje przetestowan
 - [[Panel MFO]]: DZIAŁA
 - [[Modele AI]]: DZIAŁA
 - [[PM2 WhatsApp]]: DZIAŁA
-- [[Pamiec AI]]: DZIAŁA
-- [[RAG]]: NIEZWERYFIKOWANY
+- [[Pamiec AI]]: DZIAŁA (katalog główny, nie historia)
+- [[RAG]]: NIE DZIAŁA
 - [[JCODE]]: DZIAŁA
-- [[MFO TURBO AI CENTER]]: DZIAŁA
-- [[Flask]]: DZIAŁA
+- [[MFO TURBO AI CENTER]]: DZIAŁA (rdzeń HTTP, nie wszystkie funkcje)
+- [[Flask]]: DZIAŁA (żywy proces, ryzyko odtworzenia)
 - [[Panel WWW]]: NIEZWERYFIKOWANY
 - [[llama.cpp]]: DZIAŁA
-- [[Qwen]]: DZIAŁA
+- [[Qwen]]: DZIAŁA (katalog modeli, bez inferencji)
 - [[Llama]]: NIEZWERYFIKOWANY
 - [[WhatsApp Antigravity]]: NIEZWERYFIKOWANY
 - [[systemd]]: DZIAŁA
 - [[Autostart]]: NIEZWERYFIKOWANY
 - [[Dysk E]]: DZIAŁA
-- [[GitHub]]: NIEZWERYFIKOWANY
+- [[GitHub]]: DZIAŁA (CLI i repozytorium dokumentacji)
 - [[Linear]]: NIEZWERYFIKOWANY
 - [[Mikrofon START STOP]]: NIEZWERYFIKOWANY
 - [[Wispr Flow]]: NIEZWERYFIKOWANY
 - [[Monitoring]]: NIEZWERYFIKOWANY
 - [[Logi]]: DZIAŁA
 - [[Kopie bezpieczenstwa]]: NIEZWERYFIKOWANY
-- [[Telegram]]: DZIAŁA
+- [[Telegram]]: DZIAŁA (usługa i logika offline, nie wiadomości)
 - [[Router zadan]]: NIEZWERYFIKOWANY
-- [[Historia JSON]]: NIEZWERYFIKOWANY
+- [[Historia JSON]]: NIE DZIAŁA
 - [[Ochrona API]]: NIEZWERYFIKOWANY
-- [[Antigravity CLI]]: DZIAŁA
+- [[Antigravity CLI]]: DZIAŁA (usługa, nie zdalne polecenia)
 
 ## Legenda
-DZIAŁA: sprawdzony wskazany zakres. NIE DZIAŁA: potwierdzona awaria. NIEZWERYFIKOWANY: brak pełnego dowodu. PLANOWANY: wyłącznie zamiar. Nie wyprowadzano awarii z braku danych.
-
-## Ograniczenia
-Brak testu wiadomości WhatsApp/Telegram, mikrofonu, inferencji i restartu. GitHub/Linear bez dowodu konfiguracji. Notatki opisowe nie potwierdzają integracji.
+DZIAŁA: pozytywny test określonego zakresu. NIE DZIAŁA: potwierdzona niesprawna zależność lub funkcja. NIEZWERYFIKOWANY: brak wystarczającego dowodu, test zablokowany lub świadomie pominięty.
+Nie wnioskowano o awarii na podstawie samego braku procesu lub konfiguracji. Nie restartowano usług, nie zmieniano autostartu i nie odczytywano prywatnych rozmów.

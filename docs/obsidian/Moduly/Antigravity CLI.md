@@ -1,18 +1,17 @@
 ---
 status: "DZIAŁA"
+data_testu: "2026-10-31"
 tags: [mfo, modul]
 ---
 # Antigravity CLI
 
-**Stan: DZIAŁA**
+**Stan: DZIAŁA**, wyłącznie zakres: aktywna usługa.
 
-Usługa agy remote-control aktywna, niezależna od nazwy bota WhatsApp.
-
-## Dowód
-antigravity-cli-daemon.service; ps.
+## Weryfikacja
+Metoda: systemctl show antigravity-cli-daemon.service oraz journalctl.
+Wynik: active/running, enabled, Restart=on-failure, zero restartów i zwróconych błędów w ostatnich 30 minutach. Nie testowano poleceń zdalnego sterowania. Nie utożsamiać tej usługi z botem WhatsApp.
+Czas pomiarów: 14:45 do 14:46 UTC.
 
 ## Powiązania
 - [[WSL Ubuntu]]
 - [[systemd]]
-
-Status dotyczy zakresu dowodu. Nie jest gwarancją wszystkich funkcji.

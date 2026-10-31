@@ -1,15 +1,16 @@
 ---
 status: "DZIAŁA"
+data_testu: "2026-10-31"
 tags: [mfo, modul]
 ---
 # Panel MFO
 
-**Stan: DZIAŁA**
+**Stan: DZIAŁA**, zakres: API i HTTP.
 
-Panel i API odpowiadają. Nie wykonano inferencji ani zadań zmieniających projekt.
-
-## Dowód
-GET 127.0.0.1:8082/api/health; mfo-panel-local.service.
+## Weryfikacja
+Metoda: GET 127.0.0.1:8082/api/health, GET /, systemctl i ss.
+Wynik: HTTP 200, llama_ready=true, HTML i cookie CSRF obecne. MainPID usługi zgodny z PID nasłuchu. Brak testu inferencji i zapisu historii. Aktualny interpreter nie importuje Flask, więc restart jest ryzykowny.
+Czas pomiarów: 14:45 do 14:46 UTC.
 
 ## Powiązania
 - [[MFO TURBO AI CENTER]]
@@ -19,5 +20,3 @@ GET 127.0.0.1:8082/api/health; mfo-panel-local.service.
 - [[Historia JSON]]
 - [[Router zadan]]
 - [[systemd]]
-
-Status dotyczy zakresu dowodu. Nie jest gwarancją wszystkich funkcji.

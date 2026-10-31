@@ -1,0 +1,22 @@
+{
+  "data": "2026-10-31",
+  "pomiary_utc": {"od": "14:45:27", "do": "14:46:50"},
+  "moduly": {"dziala": 17, "nie_dziala": 2, "niezweryfikowane": 11},
+  "http": {"panel_health": 200, "panel_html": 200, "llama_ready": true, "model_health": 200, "models": 200, "liczba_modeli": 1, "qwen": true, "slots": 200, "liczba_slotow": 1, "host_guard": 403, "origin_guard": 403},
+  "systemd": {"stan": "running", "sprawdzone_jednostki": 4, "active_running": 4, "enabled": 4, "restarts": 0, "bledy_err_30min": 0, "limit_wpisow_na_jednostke": 50},
+  "porty": {"8082_pid_zgodny_z_jednostka": true, "8080_pid_zgodny_z_jednostka": true},
+  "pm2": {"usluga_active": true, "bot_online": true, "wiadomosci_testowane": false},
+  "pamiec": {"dysk_zamontowany": true, "katalog_glowny_czytelny": true, "historia_katalog_istnieje": false, "stat_errno": 2, "baza_rag_dostepna": false, "rzeczywisty_retrieve_pusta_lista": true, "prywatne_rozmowy_odczytane": false, "zapis_testowy": false},
+  "windows": {"powershell_ok": true, "audio_services_running": 2, "audio_endpoints_ok": 5, "wispr_procesy": 12, "autostart_state": "Running", "autostart_last_result": 267009, "restart_testowany": false},
+  "testy_offline": {
+    "memory_rag": {"testy": 20, "wynik": "PASS"},
+    "task_router": {"testy": 13, "wynik": "PASS"},
+    "telegram_pierwszy": {"testy": 44, "pass": 43, "fail": 1, "przyczyna": "umask 077 zmienia mode 755 na 700 w danych syntetycznych"},
+    "telegram_powtorka": {"testy": 44, "wynik": "PASS", "umask_testowa": "022"},
+    "chat_limits": {"wynik": "ZABLOKOWANY", "blad_importu": "ModuleNotFoundError: flask"}
+  },
+  "router_dry_run": {"kod": 0, "profil": "local_llama", "zadanie_wykonane": false},
+  "github": {"prywatne": false, "uprawnienia": "ADMIN", "integracja_aplikacji_mfo_testowana": false},
+  "linear": {"dowod_w_sprawdzonym_kodzie": false, "polaczenie_testowane": false},
+  "ograniczenia": ["Brak inferencji", "Brak prawdziwych wiadomosci", "Brak nagrania i dyktowania", "Brak restartu", "Brak pelnego testu odtworzenia systemu", "Brak pelnego audytu bezpieczenstwa"]
+}

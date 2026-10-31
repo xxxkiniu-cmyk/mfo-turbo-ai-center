@@ -1,15 +1,16 @@
 ---
 status: "NIEZWERYFIKOWANY"
+data_testu: "2026-10-31"
 tags: [mfo, modul]
 ---
 # Autostart
 
-**Stan: NIEZWERYFIKOWANY**
+**Stan: NIEZWERYFIKOWANY**, zakres: niezawodny zimny start.
 
-Konfiguracja istnieje: zadanie Windows po logowaniu, WSL systemd, linger, PM2 resurrect. Zimnego startu nie testowano.
-
-## Dowód
-WSL-Ubuntu-Autostart; /etc/wsl.conf; 90-pix2-readiness.conf; dump.pm2 (nie do publikacji).
+## Weryfikacja
+Metoda: odczyt Get-ScheduledTask/Get-ScheduledTaskInfo i systemctl show.
+Wynik: zadanie WSL-Ubuntu-Autostart Running, LastTaskResult=267009, jednostki enabled i Restart=on-failure. To nie dowodzi udanego startu po restarcie. Brak Flask w aktualnym interpreterze zwiększa ryzyko ponownego uruchomienia panelu. Nie zmieniano konfiguracji ani autostartu.
+Czas pomiarów: 14:45 do 14:46 UTC.
 
 ## Powiązania
 - [[Windows 11]]
@@ -17,5 +18,3 @@ WSL-Ubuntu-Autostart; /etc/wsl.conf; 90-pix2-readiness.conf; dump.pm2 (nie do pu
 - [[systemd]]
 - [[PM2 WhatsApp]]
 - [[Dysk E]]
-
-Status dotyczy zakresu dowodu. Nie jest gwarancją wszystkich funkcji.
