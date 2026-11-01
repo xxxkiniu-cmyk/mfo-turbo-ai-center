@@ -1,5 +1,7 @@
 # Weryfikacja 30 modułów MFO, etap 4
 
+> Raport historyczny. Aktualny stan: [[Raport_naprawy_20261101]]. Etap 5 odtworzył źródło historii/RAG. Diagnoza braku Flask poniżej została skorygowana: /proc/PID/exe omijało istniejący venv, nie brakowało zależności aktywnej usługi.
+
 Data: 2026-10-31. Pomiary: 14:45:27 do 14:46:50 UTC. Dokumentacja zabezpieczona przed zmianami do 14:47 UTC. Punkt odniesienia: commit f68727dcf5bdf4d0f97c0044728c999f8759ee87.
 Wynik: **17 DZIAŁA, 2 NIE DZIAŁA, 11 NIEZWERYFIKOWANY**. Przed weryfikacją: 16, 0, 14. Nie jest to deklaracja pełnej sprawności systemu.
 

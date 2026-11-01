@@ -1,16 +1,16 @@
 ---
-status: "NIE DZIAŁA"
+status: "DZIAŁA"
 data_testu: "2026-10-31"
 tags: [mfo, modul]
 ---
 # Historia JSON
 
-**Stan: NIE DZIAŁA**, zakres: skonfigurowany katalog historii.
+**Stan: DZIAŁA**, zakres: odzyskane źródło JSON oraz izolowane testy zapisu.
 
 ## Weryfikacja
-Metoda: stat /mnt/e/ai_memory/mem/chat_history i kontrola warunku wstępnego save_chat_history w mfo_web.py.
-Wynik: ENOENT, brak także katalogu mem. Kod tworzy plik tymczasowy w istniejącym HISTORY_DIR i nie tworzy brakujących rodziców, więc zapis do tej ścieżki nie ma spełnionego warunku wstępnego. Nie wysyłano rozmowy ani nie wykonywano zapisu testowego. Nie oznacza to usunięcia lub utraty danych, przyczyny braku katalogu nie ustalono.
-Czas pomiarów: 14:45 do 14:46 UTC.
+Metoda: odtworzenie kompletnych par z istniejącego current/mem/merged_long_term_memory.json do nowego /mnt/e/ai_memory/mem/chat_history. Kopia źródła i manifest prywatne, zapis exclusive-create, porównanie bajtowe źródła i odczyt każdego utworzonego pliku.
+Wynik: 33 unikalne kompletne pary odtworzone, source_unchanged=true, state=verified. 5 testów bezpieczeństwa migracji PASS i 5 testów ścieżki czatu/zapisu PASS w istniejącym venv. Brak nadpisania wcześniejszej pamięci. Nie wysyłano testowej rozmowy do modelu i nie deklaruje się odzyskania niekompletnych rekordów.
+Czas naprawy i testów: 2026-10-31, 14:59 do 15:00 UTC. Szczegóły: [[Raport_naprawy_20261101]].
 
 ## Powiązania
 - [[Pamiec AI]]

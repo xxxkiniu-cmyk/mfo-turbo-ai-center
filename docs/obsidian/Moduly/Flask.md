@@ -8,9 +8,9 @@ tags: [mfo, modul]
 **Stan: DZIAŁA**, wyłącznie zakres: już działająca aplikacja HTTP.
 
 ## Weryfikacja
-Metoda: GET / i /api/health, stan mfo-panel-local.service oraz import w aktualnym interpreterze.
-Wynik: żywy proces obsługuje HTTP 200, lecz test_chat_limits nie zaimportował flask (ModuleNotFoundError). Osobna próba przez /proc/508/exe potwierdziła brak modułu Flask w aktualnym interpreterze. Nie ustalono przyczyny rozbieżności, nie restartowano usługi i niczego nie instalowano. Odtworzenie procesu jest NIEZWERYFIKOWANE i ryzykowne.
-Czas pomiarów: 14:45 do 14:46 UTC.
+Metoda: odczyt ExecStart i argv0 usługi, uruchomienie testów w istniejącym ~/.local/share/mfo-recovery/venv/bin/python. Rzeczywiste GET / oraz POST /api/chat z poprawnym CSRF i pustym komunikatem.
+Wynik: 11 testów chat_limits PASS i 5 testów chat_memory PASS. GET 200, POST 400 zgodnie z walidacją. Wcześniejszy brak Flask wynikał z użycia /proc/PID/exe, które wskazuje bazowy interpreter poza venv. Nie był dowodem brakującej zależności aktywnej usługi. Niczego nie instalowano, nie zmieniano kodu ani nie restartowano. Restart oraz pełna inferencja nadal nieprzetestowane.
+Czas testów: 2026-10-31, do 15:00 UTC. Szczegóły: [[Raport_naprawy_20261101]].
 
 ## Powiązania
 - [[Panel MFO]]

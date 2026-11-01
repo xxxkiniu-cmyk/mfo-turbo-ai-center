@@ -1,16 +1,16 @@
 ---
-status: "NIE DZIAŁA"
+status: "DZIAŁA"
 data_testu: "2026-10-31"
 tags: [mfo, modul]
 ---
 # RAG
 
-**Stan: NIE DZIAŁA**, zakres: skonfigurowane źródło historii.
+**Stan: DZIAŁA**, zakres: rzeczywiste wyszukiwanie w odzyskanym źródle historii.
 
 ## Weryfikacja
-Metoda: stat źródła mfo_memory.HISTORY_DIR, sprawdzenie mfo_rag.get_base_dir i rzeczywisty retrieve z pytaniem syntetycznym przy nieistniejącym źródle.
-Wynik: /mnt/e/ai_memory/mem/chat_history nie istnieje (ENOENT), baza mfo_rag również niedostępna, retrieve zwrócił pustą listę. Nie odczytano prywatnych rozmów. Testy jednostkowe memory_rag: 20/20 PASS na danych syntetycznych, co nie naprawia braku produkcyjnego źródła.
-Czas pomiarów: 14:45 do 14:46 UTC.
+Metoda: po odzyskaniu 33 kompletnych par wywołano rzeczywiste mfo_memory.retrieve z tokenami jednego odzyskanego rekordu, bez drukowania pytania ani odpowiedzi i bez komunikacji z modelem.
+Wynik: 3 trafienia z rzeczywistego źródła. Historyczne 20/20 testów memory_rag pozostawiono bez powtórzenia, ponieważ kod modułu nie został zmieniony. Nie testowano pełnej inferencji ani wszystkich alternatywnych ścieżek mfo_rag.
+Czas testu odczytu: 2026-10-31, 14:59 UTC. Szczegóły: [[Raport_naprawy_20261101]].
 
 ## Powiązania
 - [[Pamiec AI]]

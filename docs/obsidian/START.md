@@ -1,11 +1,12 @@
 # MFO TURBO AI CENTER
 
 Weryfikacja: **31.10.2026, 14:45 do 14:46 UTC**. Kopie dokumentacji utworzono do 14:47 UTC.
-**17 DZIAŁA / 2 NIE DZIAŁA / 11 NIEZWERYFIKOWANY.** Status DZIAŁA dotyczy wyłącznie zakresu wskazanego w notatce, nie pełnego testu funkcjonalnego.
+Aktualizacja etapu 5: **19 DZIAŁA / 0 NIE DZIAŁA / 11 NIEZWERYFIKOWANY.** Status DZIAŁA dotyczy wyłącznie zakresu wskazanego w notatce, nie pełnego testu funkcjonalnego.
 
 ## Pilne ustalenia
-- [[Historia JSON]] i [[RAG]]: brak skonfigurowanego katalogu historii, ENOENT. Nie ustalono przyczyny i nie utworzono pustej historii zamiast odzyskania właściwej.
-- [[Flask]]: żywy panel odpowiada, ale aktualny interpreter nie importuje Flask. Nie restartować na podstawie tego audytu.
+- [[Historia JSON]] i [[RAG]]: odzyskano 33 kompletne pary bez zmiany źródła, rzeczywisty retrieve zwrócił 3 trafienia.
+- [[Flask]]: 11 testów limitów i 5 testów historii PASS w istniejącym venv. Wcześniejszy błąd wynikał z wyboru interpretera.
+- [[Raport_naprawy_20261101]]: wyniki naprawy z 31.10 i finalizacja dokumentacji 01.11.2026. Bez powtarzania zakończonych testów.
 - [[Raport_weryfikacji_20261031]]: różnice, dowody i ograniczenia.
 
 ## Mapa
@@ -19,10 +20,10 @@ Weryfikacja: **31.10.2026, 14:45 do 14:46 UTC**. Kopie dokumentacji utworzono do
 - [[Modele AI]]: DZIAŁA
 - [[PM2 WhatsApp]]: DZIAŁA
 - [[Pamiec AI]]: DZIAŁA (katalog główny, nie historia)
-- [[RAG]]: NIE DZIAŁA
+- [[RAG]]: DZIAŁA (odczyt rzeczywistej historii)
 - [[JCODE]]: DZIAŁA
 - [[MFO TURBO AI CENTER]]: DZIAŁA (rdzeń HTTP, nie wszystkie funkcje)
-- [[Flask]]: DZIAŁA (żywy proces, ryzyko odtworzenia)
+- [[Flask]]: DZIAŁA (HTTP i testy w venv, bez restartu)
 - [[Panel WWW]]: NIEZWERYFIKOWANY
 - [[llama.cpp]]: DZIAŁA
 - [[Qwen]]: DZIAŁA (katalog modeli, bez inferencji)
@@ -40,10 +41,10 @@ Weryfikacja: **31.10.2026, 14:45 do 14:46 UTC**. Kopie dokumentacji utworzono do
 - [[Kopie bezpieczenstwa]]: NIEZWERYFIKOWANY
 - [[Telegram]]: DZIAŁA (usługa i logika offline, nie wiadomości)
 - [[Router zadan]]: NIEZWERYFIKOWANY
-- [[Historia JSON]]: NIE DZIAŁA
+- [[Historia JSON]]: DZIAŁA (33 odzyskane kompletne pary)
 - [[Ochrona API]]: NIEZWERYFIKOWANY
 - [[Antigravity CLI]]: DZIAŁA (usługa, nie zdalne polecenia)
 
 ## Legenda
 DZIAŁA: pozytywny test określonego zakresu. NIE DZIAŁA: potwierdzona niesprawna zależność lub funkcja. NIEZWERYFIKOWANY: brak wystarczającego dowodu, test zablokowany lub świadomie pominięty.
-Nie wnioskowano o awarii na podstawie samego braku procesu lub konfiguracji. Nie restartowano usług, nie zmieniano autostartu i nie odczytywano prywatnych rozmów.
+Nie wnioskowano o awarii na podstawie samego braku procesu lub konfiguracji. Nie restartowano usług, nie zmieniano autostartu i nie publikowano prywatnych rozmów. Odtwarzanie i test RAG odczytały pamięć wyłącznie lokalnie.
