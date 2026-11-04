@@ -9,44 +9,66 @@ Kopia przed zmianą. Bez sekretów, restartów i inferencji. Sprawdź health, je
 
 ### Obowiązek weryfikacji
 Po każdej istotnej zmianie kodu, konfiguracji, skryptu albo struktury projektu wykonaj automatyczną walidację.
+
 Nie deklaruj ukończenia bez uruchomienia co najmniej jednego realnego sprawdzenia.
 
 ### Kolejność walidacji
 Wykonuj dostępne sprawdzenia w tej kolejności:
 
 1. **Walidacja statyczna**
-   - Sprawdź składnię, formatowanie i typy odpowiednimi narzędziami dla projektu, np. `python -m py_compile`, `node --check`, `bash -n`, `shellcheck`, `ruff check`, `eslint`, `tsc --noEmit`.
+   - Sprawdź składnię: `python -m py_compile`, `node --check`, `bash -n`, `shellcheck`, `ruff check`, `eslint`, `tsc --noEmit` — zależnie od stacku.
+   - Sprawdź formatowanie, jeśli narzędzie jest skonfigurowane.
+   - Sprawdź typy, jeśli projekt używa TypeScript, mypy, pyright albo innego type checkera.
+
 2. **Testy automatyczne**
-   - Uruchom istniejące testy.
-   - Jeśli testów nie ma, a zadanie dotyczy logiki, dodaj minimalne testy jednostkowe lub integracyjne obejmujące główny scenariusz i przypadek brzegowy.
-   - Nie pisz testów sprawdzających wyłącznie istnienie pliku ani takich, które zawsze przechodzą.
+   - Uruchom istniejące testy: `pytest`, `npm test`, `vitest`, `jest`, `go test ./...`, `cargo test`, `dotnet test` itd.
+   - Jeśli testów nie ma, a zadanie dotyczy logiki, stwórz minimalne testy jednostkowe lub integracyjne.
+   - Testy muszą pokrywać główny scenariusz użytkownika oraz przynajmniej jeden przypadek brzegowy.
+   - Nie pisz testów, które zawsze przechodzą albo tylko sprawdzają istnienie pliku.
+
 3. **Build / kompilacja**
-   - Uruchom build projektu, jeśli jest skonfigurowany, i napraw błędy przed dalszą weryfikacją.
+   - Jeśli projekt ma build, uruchom go: `npm run build`, `pnpm build`, `make`, `cargo build`, `dotnet build`, `python -m build` itd.
+   - Napraw wszystkie błędy kompilacji przed przejściem dalej.
+
 4. **Test integracyjny / dymny**
-   - Uruchom aplikację, skrypt, CLI albo serwer i sprawdź rzeczywisty scenariusz końcowy.
-   - Dla serwera sprawdź proces, port, logi i co najmniej jedno żądanie.
+   - Uruchom aplikację, skrypt, CLI albo serwer lokalnie.
+   - Sprawdź realny scenariusz końcowy: wywołanie komendy, odczyt pliku, zapis danych, odpowiedź endpointu lokalnego, poprawny output.
+   - Dla serwera sprawdź status procesu, port, logi oraz co najmniej jedno żądanie / wywołanie.
+
 5. **Walidacja wyniku**
-   - Sprawdź zawartość oczekiwanego pliku, bazy, raportu lub artefaktu i porównaj ją z kryteriami ukończenia.
+   - Sprawdź, czy powstał oczekiwany plik, baza danych, raport, log albo artefakt.
+   - Zweryfikuj zawartość wyniku, nie tylko jego istnienie.
+   - Porównaj rezultat z kryteriami ukończenia.
 
 ### Zasady testów
-- Testuj zachowanie; każdy test ma jasny warunek PASS/FAIL.
-- Nie ignoruj ani nie usuwaj testów, aby build przeszedł.
-- Nie oznaczaj testów jako `skip` bez udokumentowanego powodu.
-- Gdy test wykryje błąd, napraw kod, chyba że test jest błędny; wtedy uzasadnij korektę.
-- Nowa funkcja wymaga testu, a naprawa błędu — testu regresyjnego.
+- Testuj zachowanie, nie implementację.
+- Każdy test musi mieć jasny warunek PASS/FAIL.
+- Nie ignoruj testów ani nie usuwaj ich po to, aby build przeszedł.
+- Nie oznaczaj testów jako `skip` bez wyraźnego, udokumentowanego powodu.
+- Jeśli test wykryje błąd, napraw kod, a nie test — chyba że test był błędny; wtedy wyjaśnij to w raporcie.
+- Jeśli dodajesz nową funkcję, dodaj do niej test.
+- Jeśli naprawiasz błąd, dodaj regresyjny test, który wcześniej by go wykrył.
 
 ### Obsługa niepowodzenia
 Gdy walidacja nie przechodzi:
 1. Zapisz pełny błąd i kontekst.
-2. Ustal, czy przyczyna dotyczy kodu, testu, zależności, środowiska czy danych.
-3. Zastosuj najmniejszą poprawkę i ponów odpowiednią walidację.
-4. Po maksymalnie trzech różnych nieudanych podejściach zapisz diagnozę i następny krok; kontynuuj bezpieczne, niezależne części zadania.
+2. Ustal, czy problem dotyczy kodu, testu, zależności, środowiska albo danych.
+3. Zastosuj najmniejszą poprawkę.
+4. Uruchom ponownie pełną odpowiednią walidację.
+5. Jeśli błąd trwa, zmień strategię — maksymalnie 3 różne podejścia.
+6. Po trzeciej nieudanej próbie zapisz diagnozę, próby i następny krok; nie kończ pracy, jeśli inne części zadania można bezpiecznie kontynuować.
 
 ### Minimalny dowód wykonania
-W raporcie końcowym podaj dokładne komendy i status PASS/FAIL, liczbę testów i wynik, sprawdzone ścieżki oraz dowód działania: output, status procesu, zawartość wyniku lub wynik testu.
-Nie pisz „testy powinny przechodzić”. Pokaż wynik.
+W raporcie końcowym podaj:
+- dokładne komendy walidacyjne,
+- status każdej komendy: PASS / FAIL,
+- liczbę testów oraz wynik,
+- ścieżki przetestowanych plików,
+- dowód działania: output CLI, status procesu, zawartość pliku wynikowego albo wynik testu.
+
+Zakazane jest stwierdzenie „testy powinny przechodzić”.
+Agent musi pokazać, że przechodzą.
 
 ## DEFINICJA UKOŃCZENIA
-- Statyczna walidacja, testy, build i test dymny zostały uruchomione, a wszystkie dostępne sprawdzenia przechodzą.
-- Wynik działania oraz ewentualne braki są udokumentowane.
-
+- statyczna walidacja, testy, build i test dymny zostały uruchomione, a wszystkie dostępne sprawdzenia przechodzą,
+- wynik działania oraz ewentualne braki są udokumentowane.
